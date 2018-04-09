@@ -1,0 +1,48 @@
+{
+	"name": "crmapp-back",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node ./bin/www",
+		"coverage": "nyc report --reporter=html ./node_modules/.bin/mocha",
+		"test": "./node_modules/.bin/mocha --recursive",
+		"lint": "./node_modules/.bin/eslint ./routes --fix",
+		"valgrind": "./node_modules/.bin/concurrently --kill-others --success first  \"npm start\" \"valgrind --log-file='filename' npm test; cat filename\"",
+		"concurrent": "./node_modules/.bin/concurrently --kill-others --success first  \"npm start\" \"npm test\""
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"bluebird": "^3.5.1",
+		"body-parser": "~1.17.1",
+		"concurrently": "^3.5.1",
+		"cookie-parser": "~1.4.3",
+		"crypto-js": "^3.1.9-1",
+		"debug": "~2.6.3",
+		"dotenv": "^4.0.0",
+		"express": "^4.16.2",
+		"express-jwt-ip": "^1.0.1",
+		"heroku": "^0.2.0",
+		"jsonwebtoken": "^8.1.0",
+		"nodemailer": "^4.4.0",
+		"nodemon": "^1.12.1",
+		"pg": "^7.4.0",
+		"pg-hstore": "^2.3.2",
+		"pg-pool": "^2.0.3",
+		"pg-promise": "^7.3.1",
+		"pg-query": "^0.11.0",
+		"request": "^2.83.0",
+		"serve-favicon": "~2.4.2",
+		"set-cookie": "0.0.4",
+		"squel": "^5.12.0",
+		"superagent": "^3.8.1"
+	},
+	"devDependencies": {
+		"chai": "<4",
+		"eslint": "^4.3.0",
+		"mocha": "^3.4.2",
+		"nyc": "^11.3.0",
+		"sinon": "^2.3.2",
+		"sinon-chai": "^2.12.0",
+		"supertest": "^3.0.0"
+	}
+}
